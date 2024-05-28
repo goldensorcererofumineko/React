@@ -1,0 +1,16 @@
+.Test {
+    text-align: center; /* 子要素を水平方向に中央揃え */
+}
+
+.Test li {
+    margin-bottom: 20px; /* リクエストごとの余白を追加 */
+}
+
+.Test button {
+    margin-right: 10px; /* コピーのボタンとの間隔を追加 */
+}
+
+.Test input[type="checkbox"] {
+    transform: scale(1.5); /* チェックボタンのサイズを大きくする */
+    margin-right: 10px; /* コピーのボタンとの間隔を追加 */
+}

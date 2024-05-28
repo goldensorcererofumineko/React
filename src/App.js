@@ -1,25 +1,29 @@
-import logo from './logo.svg';
+import React, { useState } from 'react';
+import MainScreen from './MainScreen';
+import LoginScreen from './LoginScreen';
 import './App.css';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+
+const App = () => {
+    const [isLoggedIn, setIsLoggedIn] = useState(false);
+
+    const handleLogin = (username, password) => {
+        if (username === 'admin' && password === '000') {
+            setIsLoggedIn(true);
+        } else {
+            alert('Invalid credentials');
+        }
+    };
+
+    return (
+        <div>
+            {isLoggedIn ? (
+                <MainScreen />
+            ) : (
+                <LoginScreen onLogin={handleLogin} />
+            )}
+        </div>
+    );
+};
 
 export default App;
